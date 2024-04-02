@@ -5,10 +5,10 @@ export default function Home (): React.JSX.Element {
   return (
     <main>
       <Layout
-      title='Inicio'
-      subTitle='Página inicial do do projeto'>
+      title='settings'
+      subTitle='Página de configurações'>
         <h1>
-          Conteúdo
+          Você não tem configurações
         </h1>
       </Layout>
     </main>

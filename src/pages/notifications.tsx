@@ -5,10 +5,10 @@ export default function Home (): React.JSX.Element {
   return (
     <main>
       <Layout
-      title='Inicio'
-      subTitle='Página inicial do do projeto'>
+      title='Notificações'
+      subTitle='Pagína de notificações'>
         <h1>
-          Conteúdo
+          Você não tem notificações
         </h1>
       </Layout>
     </main>

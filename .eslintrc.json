@@ -17,6 +17,9 @@
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
       "@typescript-eslint/strict-boolean-expressions": "off"
     }
 

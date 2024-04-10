@@ -1,18 +1,24 @@
+import useAuth from '@/data/hook/UseAuth'
+import Link from 'next/link'
 import React from 'react'
 
 const Logo = (): React.JSX.Element => {
+  const { user } = useAuth()
+
   return (
-        <div className={`
+    <div className={`
     flex flex-col items-center justify-center
     bg-white
-    h-12 w-12 rounded-full
+    h-14 w-14 rounded-full
     `}>
-            <div className='h-3 w-3 rounded-full bg-red-600 mb-0.5'/>
-            <div className="flex mt-0.5">
-                <div className='h-3 w-3 rounded-full bg-yellow-500 mr-0.5'/>
-                <div className='h-3 w-3 rounded-full bg-green-600 ml-0.5'/>
-            </div>
-        </div>
+      <Link href="/profile">
+        <img
+          src={user?.urlImage ?? '/images/default.png'}
+          alt="Foto de perfil"
+          className='rounded-full w-14 h-14'
+        />
+      </Link>
+    </div>
   )
 }
 

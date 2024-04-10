@@ -1,7 +1,7 @@
 import Layout from '@/components/templates/Layout'
 import React from 'react'
 
-export default function Home (): React.JSX.Element {
+export default function Settings (): React.JSX.Element {
   return (
     <main>
       <Layout

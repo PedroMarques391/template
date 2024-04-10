@@ -1,17 +1,24 @@
-import { type IAppContextProps, type IAppContext, type Theme } from '@/interfaces/AppContextInterface'
-import { createContext, useState } from 'react'
+import { type IAppContextProps, type IAppContext } from '@/interfaces/AppContextInterface'
+import { createContext, useEffect, useState } from 'react'
 
 const AppContext = createContext<IAppContext>({})
 
 export function AppProvider ({ children }: IAppContextProps): JSX.Element {
-  const [theme, setTheme] = useState<Theme>()
+  const [theme, setTheme] = useState<any>()
 
   function onChangeTheme (): void {
-    setTheme(theme === '' ? 'dark' : '')
+    const newTheme = theme === '' ? 'dark' : ''
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
   }
 
+  useEffect(() => {
+    const value = localStorage.getItem('theme')
+    setTheme(value)
+  }, [])
+
   return (
-        <AppContext.Provider value={{ theme: 'dark', onChangeTheme }}>
+        <AppContext.Provider value={{ theme, onChangeTheme }}>
             {children}
         </AppContext.Provider>
   )

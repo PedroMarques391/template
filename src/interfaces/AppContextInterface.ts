@@ -3,6 +3,6 @@ export interface IAppContextProps {
 }
 export type Theme = 'dark' | ''
 export interface IAppContext {
-  theme?: Theme
+  theme?: string
   onChangeTheme?: () => void
 }
